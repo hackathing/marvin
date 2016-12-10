@@ -13,5 +13,5 @@ functions:
     handler: handler.handleMessage
     events:
       - http:
-          path: response
+          path: marvin
           method: post
