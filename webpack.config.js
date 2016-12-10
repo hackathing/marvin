@@ -1,8 +1,8 @@
 module.exports = {
-  entry: './src/index.js',
-  target: 'node',
+  entry: "./src/lambda.js",
+  target: "node",
   module: {
     loaders: [
-    ]
-  }
+    ],
+  },
 };

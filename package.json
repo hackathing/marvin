@@ -1,6 +1,9 @@
 {
   "devDependencies": {
     "ava": "^0.17.0",
+    "eslint": "^3.12.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
     "serverless": "^1.3.0",
     "serverless-webpack": "^1.0.0-rc.2"
   },
@@ -8,5 +11,7 @@
     "files": [
       "src/**/*test.js"
     ]
+  },
+  "dependencies": {
   }
 }

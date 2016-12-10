@@ -15,6 +15,14 @@ test-watch: ## Run the tests when files change
 	$(NBIN)/ava --watch
 
 
+lint: ## Run the linter
+	$(NBIN)/eslint .
+
+
+lint-fix: ## Auto fix lint errors where possible
+	$(NBIN)/eslint . --fix
+
+
 deploy-dev: ## Deploy to the dev environment
 	$(NBIN)/sls deploy --env=dev
 
