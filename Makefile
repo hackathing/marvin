@@ -21,3 +21,11 @@ deploy-dev: ## Deploy to the dev environment
 
 deploy-prod: test ## Deploy to the prod environment
 	$(NBIN)/sls deploy --env=prod
+
+
+logs-dev: ## View dev logs
+	$(NBIN)/sls logs --function handleMessage --env=dev
+
+
+logs-prod: test ## View prod logs
+	$(NBIN)/sls logs --function handleMessage --env=prod

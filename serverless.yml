@@ -8,9 +8,8 @@ package:
     - .git/**
     - src/**/*test.js
 
-    # Exclude all node modules except for a few
-    - node_modules/**
-    - '!node_modules/node-fetch/**'
+plugins:
+  - serverless-webpack
 
 provider:
   name: aws
@@ -20,7 +19,7 @@ provider:
 
 functions:
   handleMessage:
-    handler: src/index.handleMessage
+    handler: src/lambda.handleMessage
     events:
       - http:
           path: marvin
