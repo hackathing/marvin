@@ -1,6 +1,6 @@
-const querystring = require("querystring");
+import querystring from "querystring";
 
-function handleMessage(event, context, callback) {
+export function handleMessage(event, context, callback) {
   const payload = querystring.parse(event.body);
   const response = {
     statusCode: 200,
@@ -11,5 +11,3 @@ function handleMessage(event, context, callback) {
 
   callback(null, response);
 }
-
-module.exports.handleMessage = handleMessage;

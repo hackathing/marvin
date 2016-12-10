@@ -1,4 +1,4 @@
-const test = require("ava");
+import test from "ava";
 
 test("it works!", (t) => {
   t.plan(1);

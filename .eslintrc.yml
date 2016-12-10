@@ -1,5 +1,11 @@
 extends: airbnb/base
+plugins:
+  - immutable
 rules:
+  immutable/no-let: error
+  immutable/no-this: error
+  immutable/no-mutation: error
+  import/prefer-default-export: off
   quotes:
     - error
     - double
