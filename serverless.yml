@@ -1,0 +1,17 @@
+service: marvin
+
+frameworkVersion: "=1.3"
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: dev
+  region: eu-west-1
+
+functions:
+  handleMessage:
+    handler: handler.handleMessage
+    events:
+      - http:
+          path: response
+          method: post
