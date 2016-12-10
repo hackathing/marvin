@@ -6,9 +6,10 @@ Marvin
 ### Usage:
 
 ```sh
-# Install serverless tool 
-npm install -g serverless
+# Install deps
+yarn install
 
 # Deploy to AWS lambda
-sls deploy
+make deploy-dev
+make deploy-prod
 ```

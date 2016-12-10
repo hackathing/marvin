@@ -2,6 +2,16 @@ service: marvin
 
 frameworkVersion: "=1.3"
 
+package:
+  exclude:
+    - tmp/**
+    - .git/**
+    - src/**/*test.js
+
+    # Exclude all node modules except for a few
+    - node_modules/**
+    - '!node_modules/node-fetch/**'
+
 provider:
   name: aws
   runtime: nodejs4.3
@@ -10,7 +20,7 @@ provider:
 
 functions:
   handleMessage:
-    handler: handler.handleMessage
+    handler: src/index.handleMessage
     events:
       - http:
           path: marvin
