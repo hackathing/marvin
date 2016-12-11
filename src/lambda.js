@@ -26,14 +26,16 @@ export function handleMessage(event, context, callback) {
     trigger_word,
   } = querystring.parse(event.body);
 
-  const response = marvin({
+  marvin({
     userName: user_name,
     channelName: channel_name,
     text: stripTrigger(text, trigger_word),
-  });
-
-  callback(null, {
-    statusCode: 200,
-    body: JSON.stringify(response),
-  });
+  })
+    .then((response) => {
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify(response),
+      });
+    })
+    .catch(callback);
 }

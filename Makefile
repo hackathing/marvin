@@ -1,7 +1,7 @@
 SHELL:=/bin/bash
 
 NBIN=./node_modules/.bin
-AVA=node -r babel-polyfill -r babel-register ./node_modules/.bin/ava
+AVA=node -r babel-register ./node_modules/.bin/ava
 
 
 help: ## Prints help for targets with comments
