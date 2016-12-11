@@ -1,6 +1,7 @@
 SHELL:=/bin/bash
 
 NBIN=./node_modules/.bin
+AVA=node -r babel-polyfill -r babel-register ./node_modules/.bin/ava
 
 
 help: ## Prints help for targets with comments
@@ -8,11 +9,11 @@ help: ## Prints help for targets with comments
 
 
 test: ## Run the tests once
-	$(NBIN)/ava
+	$(AVA)
 
 
 test-watch: ## Run the tests when files change
-	$(NBIN)/ava --watch
+	$(AVA) --watch
 
 
 lint: ## Run the linter
@@ -24,16 +25,16 @@ lint-fix: ## Auto fix lint errors where possible
 
 
 deploy-dev: ## Deploy to the dev environment
-	$(NBIN)/sls deploy --env=dev
+	$(NBIN)/sls deploy --stage=dev
 
 
 deploy-prod: test ## Deploy to the prod environment
-	$(NBIN)/sls deploy --env=prod
+	$(NBIN)/sls deploy --stage=prod
 
 
 logs-dev: ## View dev logs
-	$(NBIN)/sls logs --function handleMessage --env=dev
+	NODE_ENV=production $(NBIN)/sls logs --function handleMessage --stage=dev
 
 
 logs-prod: test ## View prod logs
-	$(NBIN)/sls logs --function handleMessage --env=prod
+	NODE_ENV=production $(NBIN)/sls logs --function handleMessage --stage=prod

@@ -18,5 +18,8 @@
       "src/**/*test.js"
     ]
   },
-  "dependencies": {}
+  "dependencies": {
+    "babel-plugin-transform-regenerator": "^6.20.0",
+    "babel-polyfill": "^6.20.0"
+  }
 }

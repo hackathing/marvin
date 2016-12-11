@@ -1,5 +1,8 @@
 module.exports = { // eslint-disable-line immutable/no-mutation
-  entry: "./src/lambda.js",
+  entry: [
+    "babel-polyfill",
+    "./src/lambda.js",
+  ],
   target: "node",
   module: {
     loaders: [
