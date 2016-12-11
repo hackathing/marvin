@@ -3,7 +3,6 @@
     "latest"
   ],
   "plugins": [
-    "transform-object-rest-spread",
-    "transform-regenerator"
+    "transform-object-rest-spread"
   ]
 }
